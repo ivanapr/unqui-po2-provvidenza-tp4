@@ -3,14 +3,18 @@ package ar.edu.unq.po2.tp4;
 public class Producto {
 	String nombre;
 	double precio;
-	boolean esCuidado = false;
-	public String getNombre() {
-		return nombre;
-	}
-	public Producto(String nombre, double precio, boolean esCuidado) {
+	boolean precioCuidado = false;
+	public Producto(String nombre, double precio, boolean precioCuidado) {
 		this.setNombre(nombre);
 		this.setPrecio(precio);
-		this.setEsCuidado(esCuidado);
+		this.setPrecioCuidado(precioCuidado);
+	}
+	public Producto(String nombre, double precio) {
+		this.setPrecio(precio);
+		this.setNombre(nombre);
+	}
+	public String getNombre() {
+		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -21,11 +25,13 @@ public class Producto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public boolean getEsCuidado() {
-		return esCuidado;
+	public boolean esPrecioCuidado() {
+		return precioCuidado;
 	}
-	public void setEsCuidado(boolean esCuidado) {
-		this.esCuidado = esCuidado;
+	public void setPrecioCuidado(boolean esCuidado) {
+		this.precioCuidado = esCuidado;
 	}
-	
+	public void aumentarPrecio(double aumento) {
+		this.setPrecio(this.getPrecio() + aumento);
+	}
 }
